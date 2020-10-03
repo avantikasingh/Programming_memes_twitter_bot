@@ -24,7 +24,7 @@ sinceDate = (datetime.now() - timedelta(1)).strftime('%Y-%m-%d')
 
 #Retweet tweets with #programmingmemes, #ProgrammingMemes, #devjokes or #DevJokes
 #Filter out retweets
-for tweet in tweepy.Cursor(api.search, q=('#programmingmemes OR #devjokes -filter:retweets'), lang='en', since='2020-10-03').items():
+for tweet in tweepy.Cursor(api.search, q=('#programmingmemes OR #devjokes -filter:retweets'), lang='en', since=sinceDate).items():
     try:
         # Add \n escape character to print() to organize tweets
         print('\nTweet by: @' + tweet.user.screen_name)
